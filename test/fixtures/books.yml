@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  string: MyString
+  available: MyString
+  boolean: MyString
+  add_reference: MyString
+  books,: MyString
+  category,: MyString
+  foreign_key: MyString
+  'true': MyString
+
+two:
+  title: MyString
+  string: MyString
+  available: MyString
+  boolean: MyString
+  add_reference: MyString
+  books,: MyString
+  category,: MyString
+  foreign_key: MyString
+  'true': MyString

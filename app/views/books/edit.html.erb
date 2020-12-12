@@ -1,0 +1,13 @@
+<h2>New Book</h2>
+<%= form_with model: @book do |form| %>
+    <%= form.label :title, "Book Title"%><br>
+    <%= form.text_field :title%><br>
+    <%= form.label :category, "Category"%><br>
+    <%= form.number_field :category_id, in: 1.0..20.0, step: 0.0 %><br>
+    <%= form.label :available, "Available"%><br>
+    <%= form.radio_button :available, "true" %>
+    <%= form.label :true, "True" %>
+    <%= form.radio_button :available, "false" %>
+    <%= form.label :false, "False" %><br>
+    <%= form.submit %>
+<% end %>

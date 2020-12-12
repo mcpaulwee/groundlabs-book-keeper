@@ -1,0 +1,5 @@
+<h3>Edit User</h3>
+<%= form_with model: @user do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= form.submit %>
+<% end %>
