@@ -49,14 +49,15 @@
     <% @books.each do |book|%>
     <tr>
         <td><%= book.id%></td>
-        <td><%= link_to book.title, book_path(book)%></td>
-        <td><%= book.category_id%></td>
+        <td><%= book.title%></td>
+        <td><%= link_to book.category_id, book_path(book)%></td>
         <td><%= book.available%></td>
         <td><%= link_to "EDIT", edit_book_path(book)%></td>
         <td><%= link_to "DELETE", book_path(book), method: :delete, data:{confirm: "Are you sure?"}%></td>
     </tr>
     <% end %>
 </table>
+<p>Note: Please click on Category Number to view category details.</p>
 
 
 
