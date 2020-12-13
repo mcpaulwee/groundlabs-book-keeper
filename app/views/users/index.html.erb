@@ -35,6 +35,7 @@
     </tr>
     <% end %>
 </table>
+<p>Note: Please click on Category Name to view books under each category.</p>
 
 <h1>Books</h1>
 <%= link_to "Add New Book", new_book_path%>
@@ -42,7 +43,7 @@
     <tr>
         <th>ID</th>
         <th>Book Title</th>
-        <th>Category</th>
+        <th>Category No.</th>
         <th>Availability</th>
         <th>Action</th>
     </tr>
@@ -54,10 +55,11 @@
         <td><%= book.available%></td>
         <td><%= link_to "EDIT", edit_book_path(book)%></td>
         <td><%= link_to "DELETE", book_path(book), method: :delete, data:{confirm: "Are you sure?"}%></td>
+        <td><%= link_to "BORROW", borrowed_book_path(book)%></td>
     </tr>
     <% end %>
 </table>
-<p>Note: Please click on Category Number to view category details.</p>
+<p>Note: Please click on Category No. to view category details.</p>
 
 
 
