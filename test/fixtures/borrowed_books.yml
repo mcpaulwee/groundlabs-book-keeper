@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_borrowed: MyString
+  datetime: MyString
+  date_returned: MyString
+  datetime: MyString
+
+two:
+  date_borrowed: MyString
+  datetime: MyString
+  date_returned: MyString
+  datetime: MyString

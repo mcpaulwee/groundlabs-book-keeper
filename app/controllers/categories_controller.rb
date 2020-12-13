@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
     def show
         @category = Category.find(params[:id])
+        @books_by_category = Book.where(:category_id => @category.id)
     end
 
     def new
