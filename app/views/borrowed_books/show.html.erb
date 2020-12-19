@@ -6,6 +6,7 @@
         <th>Book Title</>
         <th>User Name</>
         <th>Available</>
+        <th>Action</>
     </tr>
     <% @borrowed_books.each do |borrowed_book|%>
     <tr>
@@ -13,6 +14,7 @@
         <td><%= borrowed_book.book.title%></td>
         <td><%= borrowed_book.user.name%></td>
         <td><%= borrowed_book.book.available%></td>
+        
     </tr>
     <% end %>
 </table>

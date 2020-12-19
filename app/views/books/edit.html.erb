@@ -3,7 +3,7 @@
     <%= form.label :title, "Book Title"%><br>
     <%= form.text_field :title%><br>
     <%= form.label :category, "Category"%><br>
-    <%= form.number_field :category_id, in: 1.0..20.0, step: 0.0 %><br>
+    <%= form.select :category_id, options_for_select(Category.all.pluck(:name, :id))%><br>
     <%= form.label :available, "Available"%><br>
     <%= form.radio_button :available, "true" %>
     <%= form.label :true, "True" %>

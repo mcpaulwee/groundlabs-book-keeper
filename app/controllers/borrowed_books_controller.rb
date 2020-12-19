@@ -10,7 +10,9 @@ class BorrowedBooksController < ApplicationController
     def create
         @borrowed_book = BorrowedBook.new(borrow_book_params)
         if @borrowed_book.save
+            Book.find(borrow_book_params[:book_id]).update(:available => false)
             redirect_to root_path
+
         else
             render new
         end
