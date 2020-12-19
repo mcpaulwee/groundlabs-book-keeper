@@ -1,9 +1,9 @@
 <h1>Borrow a Book</h1>
 <%= form_with model: @borrowed_book do |form| %>
     <%= form.label :user_id, "Select User ID"%><br>
-    <%= form.number_field :user_id, in: 1.0..20.0, step: 0.0 %><br>
+    <%= form.select :user_id, options_for_select(User.all.pluck(:name, :id))%><br>
     <%= form.label :book_id, "Select Book ID"%><br>
-    <%= form.number_field :book_id, in: 1.0..20.0, step: 0.0 %><br><br>
+    <%= form.select :book_id, options_for_select(Book.all.pluck(:title, :id))%><br>
     <%= form.submit %>
 <% end %>
 
