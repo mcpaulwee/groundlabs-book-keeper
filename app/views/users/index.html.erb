@@ -1,65 +1,81 @@
-<h1>Users</h1>
-<%= link_to "Add New User", new_user_path%>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>User Name</th>
-        <th>Action</th>
-    </tr>
-    <% @users.each do |user|%>
-    <tr>
-        <td><%= user.id%></td>
-        <td><%= link_to user.name, user_path(user)%></td>
-        <td><%= link_to "EDIT", edit_user_path(user.id)%></td>
-        <td><%= link_to "DELETE", user_path(user), method: :delete, data:{confirm: "Are you sure?"}%></td>
-    </tr>
-    <% end %>
-</table>
 
-<br>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bookeeper Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Users</h1>
 
-<h1>Categories</h1>
-<%= link_to "Add New Category", new_category_path%>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Category</th>
-        <th>Action</th>
-    </tr>
-    <% @categories.each do |category|%>
-    <tr>
-        <td><%= category.id%></td>
-        <td><%= link_to category.name, category_path(category)%></td>
-        <td><%= link_to "EDIT", edit_category_path(category)%></td>
-        <td><%= link_to "DELETE", category_path(category), method: :delete, data:{confirm: "Are you sure?"}%></td>
-    </tr>
-    <% end %>
-</table>
-<p>Note: Please click on Category Name to view books under each category.</p>
+    <%= link_to "Add New User", new_user_path, :class => "btn btn-success mar_bottom5"%>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Action</th>
+        </tr>
+        <% @users.each do |user|%>
+        <tr>
+            <td><%= user.id%></td>
+            <td><%= link_to user.name, user_path(user)%></td>
+            <td><%= link_to "EDIT", edit_user_path(user.id)%>
+            <%= link_to "DELETE", user_path(user), method: :delete, data:{confirm: "Are you sure?"}%></td>
+        </tr>
+        <% end %>
+    </table>
 
-<h1>Books</h1>
-<%= link_to "Add New Book", new_book_path%>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Book Title</th>
-        <th>Category No.</th>
-        <th>Availability</th>
-        <th>Action</th>
-    </tr>
-    <% @books.each do |book|%>
-    <tr>
-        <td><%= book.id%></td>
-        <td><%= book.title%></td>
-        <td><%= link_to book.category_id, book_path(book)%></td>
-        <td><%= book.available%></td>
-        <td><%= link_to "EDIT", edit_book_path(book)%></td>
-        <td><%= link_to "DELETE", book_path(book), method: :delete, data:{confirm: "Are you sure?"}%></td>
-        <td><%= link_to "BORROW", borrowed_book_path(book)%></td>
-    </tr>
-    <% end %>
-</table>
-<p>Note: Please click on Category No. to view category details.</p>
+    <br>
+
+    <h1>Categories</h1>
+    <%= link_to "Add New Category", new_category_path, :class => "btn btn-success mar_bottom5"%>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Action</th>
+        </tr>
+        <% @categories.each do |category|%>
+        <tr>
+            <td><%= category.id%></td>
+            <td><%= link_to category.name, category_path(category)%></td>
+            <td><%= link_to "EDIT", edit_category_path(category)%>
+            <%= link_to "DELETE", category_path(category), method: :delete, data:{confirm: "Are you sure?"}%></td>
+        </tr>
+        <% end %>
+    </table>
+    <p>Note: Please click on Category Name to view books under each category.</p>
+
+    <h1>Books</h1>
+    <%= link_to "Add New Book", new_book_path, :class => "btn btn-success mar_bottom5"%>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Book Title</th>
+            <th>Category No.</th>
+            <th>Availability</th>
+            <th>Action</th>
+        </tr>
+        <% @books.each do |book|%>
+        <tr>
+            <td><%= book.id%></td>
+            <td><%= book.title%></td>
+            <td><%= link_to book.category_id, book_path(book)%></td>
+            <td><%= book.available%></td>
+            <td><%= link_to "EDIT", edit_book_path(book)%>
+            <%= link_to "DELETE", book_path(book), method: :delete, data:{confirm: "Are you sure?"}%>
+            <%= link_to "BORROW", borrowed_book_path(book)%></td>
+        </tr>
+        <% end %>
+    </table>
+    <p>Note: Please click on Category No. to view category details.</p>
+</div>
+</body>
+</html>
+
+
 
 
 
