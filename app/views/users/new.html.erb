@@ -1,5 +1,2 @@
 <h3>New User</h3>
-<%= form_with model: @user do |form| %>
-  <%= form.text_field :name, placeholder: "name" %>
-  <%= form.submit %>
-<% end %>
+<%= render partial: '/users/form' %>
